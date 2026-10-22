@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Steal an Egg — Daily Rewards</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&amp;family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0b1a3a}
+a{color:#fff}a:hover{color:#ffe14d}
+@keyframes popIn{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.04);opacity:1}100%{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes shine{0%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(220%) skewX(-20deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stroke{paint-order:stroke fill;-webkit-text-stroke:5px #1a1033}
+.stroke-sm{paint-order:stroke fill;-webkit-text-stroke:3.5px #1a1033}
+.btn{cursor:pointer;transition:transform .12s ease, filter .12s ease}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(3px)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.icon-float{animation:floaty 2.6s ease-in-out infinite}
+@keyframes ringOut{0%{transform:scale(.3);opacity:1}100%{transform:scale(2.2);opacity:0}}
+@keyframes flashA{0%{opacity:.9}100%{opacity:0}}
+@keyframes plusUp{0%{transform:translate(-50%,0) scale(.6);opacity:0}20%{transform:translate(-50%,-10px) scale(1.1);opacity:1}100%{transform:translate(-50%,-56px) scale(1);opacity:0}}
+@keyframes burst{0%{transform:translate(0,0) scale(.4) rotate(0);opacity:1}80%{opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.2) rotate(180deg);opacity:0}}
+@keyframes bounce{0%{transform:scale(1)}25%{transform:scale(1.35) rotate(-6deg)}50%{transform:scale(.92) rotate(4deg)}75%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes bigPop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes fadeOut{0%,78%{opacity:1}100%{opacity:0}}
+.ring{position:absolute;left:50%;top:50%;width:100px;height:100px;margin:-50px 0 0 -50px;border-radius:50%;border:6px solid #ffe14d;animation:ringOut .7s ease-out both;pointer-events:none}
+.ring2{border-color:#ffffff;animation-delay:.12s}
+.flash{position:absolute;inset:-4px;border-radius:22px;background:#fff6a8;animation:flashA .5s ease-out both;pointer-events:none}
+.plus{position:absolute;left:50%;top:6px;white-space:nowrap;font-family:'Lilita One',sans-serif;font-size:22px;color:#3ddc4f;animation:plusUp 1.1s ease-out both;pointer-events:none}
+.pop-img{animation:bounce .6s ease-out both}
+.pt{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;background:#ffe14d;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:burst .8s ease-out both;pointer-events:none}
+.pt.big{width:26px;height:26px;margin:-13px 0 0 -13px;animation-duration:1.1s}
+.p1{--dx:0px;--dy:-80px}.p2{--dx:58px;--dy:-58px;background:#ffffff}.p3{--dx:80px;--dy:0px;background:#ff4fa3}.p4{--dx:58px;--dy:58px}
+.p5{--dx:0px;--dy:80px;background:#43e0ff}.p6{--dx:-58px;--dy:58px;background:#ffffff}.p7{--dx:-80px;--dy:0px;background:#3ddc4f}.p8{--dx:-58px;--dy:-58px;background:#ff4fa3}
+.pt.big.p1{--dy:-150px}.pt.big.p2{--dx:110px;--dy:-110px}.pt.big.p3{--dx:150px}.pt.big.p4{--dx:110px;--dy:110px}.pt.big.p5{--dy:150px}.pt.big.p6{--dx:-110px;--dy:110px}.pt.big.p7{--dx:-150px}.pt.big.p8{--dx:-110px;--dy:-110px}
+.rays{position:absolute;left:50%;top:50%;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:repeating-conic-gradient(rgba(255,225,77,.55) 0 12deg,transparent 12deg 30deg);animation:spin 6s linear infinite;-webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);mask:radial-gradient(circle,#000 30%,transparent 70%)}
+.glow{position:absolute;left:50%;top:50%;width:220px;height:220px;margin:-110px 0 0 -110px;border-radius:50%;filter:blur(30px);opacity:.85}
+.shine{position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 2.4s ease-in-out infinite}
+</style>
+</helmet>
+
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; font-family: 'Fredoka', system-ui, sans-serif; color: #fff; background: #5ec8ff">
+
+  <!-- Blurred game world background -->
+  <div aria-hidden="true" style="position: absolute; inset: -40px; filter: blur(9px); transform: scale(1.05)">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #3aa8ff 0%, #7fd6ff 45%, #b8ecff 60%)"></div>
+    <div style="position: absolute; left: 30px; top: 120px; width: 160px; height: 60px; border-radius: 40px; background: #ffffff; opacity: .9"></div>
+    <div style="position: absolute; left: 240px; top: 70px; width: 140px; height: 50px; border-radius: 40px; background: #ffffff; opacity: .85"></div>
+    <div style="position: absolute; left: 180px; top: 220px; width: 110px; height: 40px; border-radius: 40px; background: #ffffff; opacity: .7"></div>
+    <div style="position: absolute; left: -40px; top: 430px; width: 520px; height: 520px; border-radius: 50%; background: #5bd34a"></div>
+    <div style="position: absolute; left: 0; top: 560px; width: 470px; height: 400px; background: #3fb33a"></div>
+    <div style="position: absolute; left: 40px; top: 380px; width: 90px; height: 120px; background: #c97b3f; border-radius: 8px"></div>
+    <div style="position: absolute; left: 25px; top: 350px; width: 120px; height: 40px; background: #e74c3c; border-radius: 6px"></div>
+    <div style="position: absolute; left: 290px; top: 360px; width: 100px; height: 140px; background: #8a5cf6; border-radius: 8px"></div>
+    <div style="position: absolute; left: 70px; top: 620px; width: 60px; height: 78px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: #ffd23f"></div>
+    <div style="position: absolute; left: 190px; top: 660px; width: 70px; height: 90px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: #ff6fb5"></div>
+    <div style="position: absolute; left: 310px; top: 610px; width: 56px; height: 72px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: #43e0ff"></div>
+    <div style="position: absolute; left: 140px; top: 760px; width: 64px; height: 82px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: #a66bff"></div>
+  </div>
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(10, 8, 40, 0.45)"></div>
+
+  <!-- Content -->
+  <sc-if value="{{shown}}" hint-placeholder-val="{{ true }}">
+  <div style="position: relative; height: 100%; box-sizing: border-box; padding: 40px 14px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+
+    <!-- Title -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0; transform: rotate(-2deg)">
+      <button class="btn stroke" onClick="{{reload}}" aria-label="Steal an Egg — reload" style="margin: 0; padding: 0; border: 0; background: transparent; font-family: 'Lilita One', sans-serif; font-size: 50px; line-height: 1; letter-spacing: 1px; color: #ffe14d; text-shadow: 0 5px 0 #1a1033">STEAL AN EGG</button>
+      <div style="margin-top: 8px; padding: 6px 22px; border-radius: 14px; background: #ff4fa3; border: 4px solid #1a1033; box-shadow: 0 5px 0 #1a1033">
+        <div class="stroke-sm" style="font-family: 'Lilita One', sans-serif; font-size: 24px; line-height: 1; color: #ffffff">DAILY REWARDS</div>
+      </div>
+    </div>
+
+    <!-- Claim panel -->
+    <div style="width: 100%; margin-top: 8px; box-sizing: border-box; padding: 16px 14px 18px; border-radius: 28px; background: #2b5cff; border: 5px solid #1a1033; box-shadow: 0 8px 0 #1a1033, inset 0 -8px 0 #1f43c4, inset 0 4px 0 #5e86ff; display: flex; flex-direction: column; gap: 12px; animation: popIn .45s ease-out both">
+
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <div class="stroke-sm" style="font-family: 'Lilita One', sans-serif; font-size: 26px; color: #ffffff">CLAIM REWARDS</div>
+        <div style="padding: 4px 12px; border-radius: 999px; background: #1a1033; font-weight: 700; font-size: 15px; color: #ffe14d">{{progress}}</div>
+      </div>
+
+      <sc-for list="{{rewards}}" as="r" hint-placeholder-count="3">
+        <div style="position: relative; display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 22px; background: #ffffff; border: 4px solid #1a1033; box-shadow: 0 5px 0 #1a1033; color: #1a1033">
+          <div style="position: relative; flex: 0 0 auto; width: 104px; height: 104px; border-radius: 18px; border: 3px solid #1a1033; display: flex; align-items: center; justify-content: center; background: {{r.tileBg}}">
+            <sc-if value="{{r.fx}}" hint-placeholder-val="{{ false }}">
+              <span class="ring" aria-hidden="true"></span>
+              <span class="ring ring2" aria-hidden="true"></span>
+            </sc-if>
+            <img class="{{r.imgClass}}" src="{{r.img}}" alt="{{r.name}}" style="position: relative; width: 92px; height: 92px; object-fit: contain; filter: drop-shadow(0 3px 0 rgba(26,16,51,.6))">
+            <sc-if value="{{r.fx}}" hint-placeholder-val="{{ false }}">
+              <span class="pt p1" aria-hidden="true"></span><span class="pt p2" aria-hidden="true"></span><span class="pt p3" aria-hidden="true"></span><span class="pt p4" aria-hidden="true"></span>
+              <span class="pt p5" aria-hidden="true"></span><span class="pt p6" aria-hidden="true"></span><span class="pt p7" aria-hidden="true"></span><span class="pt p8" aria-hidden="true"></span>
+            </sc-if>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 5px">
+            <div style="font-family: 'Lilita One', sans-serif; font-size: 22px; line-height: 1.05">{{r.name}}</div>
+            <div style="align-self: flex-start; padding: 3px 10px; border-radius: 9px; border: 2px solid #1a1033; font-weight: 700; font-size: 13px; letter-spacing: .5px; color: #ffffff; background: {{r.rarityBg}}">{{r.rarity}}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px">
+              <sc-for list="{{r.stats}}" as="s" hint-placeholder-count="1">
+                <div style="padding: 2px 8px; border-radius: 8px; background: #eef2ff; font-weight: 700; font-size: 13.5px; color: #2b3a8f">{{s}}</div>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{r.open}}" hint-placeholder-val="{{ true }}">
+            <button class="btn" onClick="{{r.claim}}" aria-label="Claim {{r.name}}" style="flex: 0 0 auto; position: relative; overflow: hidden; min-width: 84px; height: 52px; padding: 0 10px; border-radius: 15px; border: 3px solid #1a1033; background: #3ddc4f; box-shadow: 0 4px 0 #1a1033, inset 0 -5px 0 #26a836; font-family: 'Lilita One', sans-serif; font-size: 19px; color: #ffffff">
+              <span class="shine"></span>
+              <span class="stroke-sm" style="position: relative">CLAIM</span>
+            </button>
+          </sc-if>
+          <sc-if value="{{r.claimed}}" hint-placeholder-val="{{ false }}">
+            <div style="flex: 0 0 auto; min-width: 84px; height: 52px; border-radius: 15px; border: 3px solid #1a1033; background: #d6dbe8; display: flex; align-items: center; justify-content: center; gap: 4px; font-family: 'Lilita One', sans-serif; font-size: 16px; color: #4a5370; animation: popIn .3s ease-out both">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2fae3f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg>
+              DONE
+            </div>
+          </sc-if>
+          <sc-if value="{{r.fx}}" hint-placeholder-val="{{ false }}">
+            <span class="flash" aria-hidden="true"></span>
+            <span class="plus stroke-sm" aria-hidden="true">+1 {{r.name}}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <sc-if value="{{allClaimed}}" hint-placeholder-val="{{ false }}">
+        <a class="btn" href="{{accountUrl}}" target="_blank" rel="noopener" style="position: relative; overflow: hidden; margin-top: 6px; height: 60px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 18px; border: 4px solid #1a1033; background: #ffc928; box-shadow: 0 6px 0 #1a1033, inset 0 -7px 0 #e59a00; font-family: 'Lilita One', sans-serif; font-size: 26px; color: #ffffff; animation: popIn .45s ease-out both">
+          <span class="shine"></span>
+          <span class="stroke" style="position: relative">GO TO ACCOUNT</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{notAll}}" hint-placeholder-val="{{ true }}">
+        <div style="text-align: center; font-weight: 600; font-size: 14px; color: #dfe7ff">Claim all 3 rewards to continue</div>
+      </sc-if>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- Claim reveal popup -->
+  <sc-if value="{{pop.show}}" hint-placeholder-val="{{ false }}">
+    <div aria-live="polite" style="position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(10, 6, 40, 0.55); animation: fadeOut 1.6s ease-in both">
+      <div style="position: relative; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center">
+        <span class="rays" aria-hidden="true"></span>
+        <span class="glow" aria-hidden="true" style="background: {{pop.glow}}"></span>
+        <img src="{{pop.img}}" alt="" style="position: relative; width: 200px; height: 200px; object-fit: contain; animation: bigPop .6s cubic-bezier(.2,1.6,.4,1) both; filter: drop-shadow(0 6px 0 rgba(26,16,51,.6))">
+        <span class="pt big p1" aria-hidden="true"></span><span class="pt big p2" aria-hidden="true"></span><span class="pt big p3" aria-hidden="true"></span><span class="pt big p4" aria-hidden="true"></span>
+        <span class="pt big p5" aria-hidden="true"></span><span class="pt big p6" aria-hidden="true"></span><span class="pt big p7" aria-hidden="true"></span><span class="pt big p8" aria-hidden="true"></span>
+      </div>
+      <div class="stroke" style="font-family: 'Lilita One', sans-serif; font-size: 40px; line-height: 1; color: #ffe14d; text-shadow: 0 4px 0 #1a1033; animation: bigPop .5s .1s cubic-bezier(.2,1.6,.4,1) both">CLAIMED!</div>
+      <div class="stroke-sm" style="font-family: 'Lilita One', sans-serif; font-size: 26px; color: #ffffff; animation: bigPop .5s .18s cubic-bezier(.2,1.6,.4,1) both">{{pop.name}}</div>
+      <div style="padding: 4px 14px; border-radius: 10px; border: 3px solid #1a1033; font-weight: 700; font-size: 15px; letter-spacing: .5px; color: #ffffff; background: {{pop.rarityBg}}; animation: bigPop .5s .24s cubic-bezier(.2,1.6,.4,1) both">{{pop.rarity}}</div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accountUrl":{"editor":"text","default":"https://www.roblox.com/home"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const R = {
+      COSMIC: 'linear-gradient(90deg,#6a2cff,#d23cff,#3f7bff)',
+      DIVINE: 'linear-gradient(90deg,#f7b500,#ffde59,#f7b500)',
+      ETERNAL: 'linear-gradient(90deg,#ff2d95,#ff7ad1,#ff2d95)',
+      TITAN: 'linear-gradient(90deg,#0077ff,#2fe0ff,#0077ff)',
+      SECRET: 'linear-gradient(90deg,#0d0d0d,#1fa64a,#0d0d0d)'
+    };
+    const mk = (name, rarity, stats, id, tile) => ({ name, rarity, stats, img: '/_blob/' + id, rarityBg: R[rarity], tileBg: tile });
+    this.pools = [
+      [
+        mk('Galaxy Trail', 'COSMIC', ['5× Speed'], '71d214ab17e8b429db35a2a6b4d6d64d', 'radial-gradient(circle at 50% 40%, #6a3dff, #1d0b55)'),
+        mk('Moonbloom Trail', 'DIVINE', ['20× Speed', '5Q $'], '7d0690bf35a79a37b99aea75f81dc937', 'radial-gradient(circle at 50% 40%, #c9fff4, #23b5a6)'),
+        mk('Divine Trail', 'DIVINE', ['14× Speed', '300T $'], 'a5eaf40378c1ca10966010cbf294f353', 'radial-gradient(circle at 50% 40%, #fff3c2, #f2b632)'),
+        mk('Eternal Trail', 'ETERNAL', ['10× Speed', '12,5T $'], '2d4633900dae991f43b1322ca082e887', 'radial-gradient(circle at 50% 40%, #ffd1ec, #ff3fa4)')
+      ],
+      [
+        mk('Angelic Treadmill', 'DIVINE', ['+2k Speed/Step', '1Qa $'], '6c9f63ca417819095bf638d7c281a238', 'radial-gradient(circle at 50% 40%, #fff3c2, #f2b632)'),
+        mk('Astral Treadmill', 'TITAN', ['+3k Speed/Step', '15Qa $'], '9ed0c51ec55dd0f054b28f3ed1fb33d8', 'radial-gradient(circle at 50% 40%, #6fd8ff, #123a7a)'),
+        mk('Demonic Treadmill', 'ETERNAL', ['+1k Speed/Step', '50T $'], 'd1457011b79e484924ba1a3a1f66decf', 'radial-gradient(circle at 50% 40%, #ff9a4a, #6b0f0f)'),
+        mk('Hacker Treadmill', 'SECRET', ['+500 Speed/Step', '2T $'], 'a90da658f9b18722f7103f240c53010a', 'radial-gradient(circle at 50% 40%, #2a6b3a, #050d07)')
+      ],
+      [
+        mk('Luminous Egg', 'DIVINE', [], '99e429167d1efbf857b8b0b0bc05c2da', 'radial-gradient(circle at 50% 40%, #bff4ff, #3a8dff)'),
+        mk('World Burner', 'DIVINE', [], '15d5f6790215d52de785673b0f6e1c16', 'radial-gradient(circle at 50% 40%, #ff7a7a, #3a0a10)'),
+        mk('Archangel', 'DIVINE', [], '8c4d6de7e48e28909f1675a75a0ad3d0', 'radial-gradient(circle at 50% 40%, #ffffff, #f2c94c)'),
+        mk('Pegasus', 'ETERNAL', [], 'c0a3bf7adf46871cbb5354e42a0744dd', 'radial-gradient(circle at 50% 40%, #fff7d6, #ff9fd6)'),
+        mk('Nightmare', 'DIVINE', [], 'f76084ac70e0be54f6262410c2d43f20', 'radial-gradient(circle at 50% 40%, #b8f58a, #2f6b1f)'),
+        mk('Aetheron', 'DIVINE', [], '2a358d2bd8ef2d9b431643462dfd12de', 'radial-gradient(circle at 50% 40%, #ffe9a8, #8a1a1a)')
+      ]
+    ];
+    this.all = [].concat(...this.pools);
+    this.state = { claimed: [false, false, false], combo: this.pickCombo(null) };
+  }
+  pickCombo(prev) {
+    let c;
+    do {
+      const idx = this.all.map((_, i) => i);
+      for (let i = idx.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [idx[i], idx[j]] = [idx[j], idx[i]];
+      }
+      c = idx.slice(0, 3);
+    } while (prev && c.some((v) => prev.indexOf(v) !== -1));
+    return c;
+  }
+  renderVals() {
+    const base = this.state.combo.map((idx) => this.all[idx]);
+    const claimed = this.state.claimed;
+    const rewards = base.map((r, i) => ({
+      ...r,
+      claimed: claimed[i],
+      open: !claimed[i],
+      fx: this.state.fx === i,
+      imgClass: this.state.fx === i ? 'pop-img' : 'icon-float',
+      claim: () => {
+        const next = this.state.claimed.slice();
+        next[i] = true;
+        clearTimeout(this._fxT); clearTimeout(this._popT);
+        this.setState({ claimed: next, fx: i, pop: r });
+        this._fxT = setTimeout(() => this.setState({ fx: null }), 1100);
+        this._popT = setTimeout(() => this.setState({ pop: null }), 1600);
+      }
+    }));
+    const p = this.state.pop;
+    const pop = p
+      ? { show: true, name: p.name, img: p.img, rarity: p.rarity, rarityBg: p.rarityBg, glow: p.rarityBg }
+      : { show: false, name: '', img: '', rarity: '', rarityBg: '', glow: '' };
+    const count = claimed.filter(Boolean).length;
+    const reload = () => {
+      clearTimeout(this._t);
+      this.setState({ claimed: [false, false, false], shown: false, fx: null, pop: null, combo: this.pickCombo(this.state.combo) });
+      this._t = setTimeout(() => this.setState({ shown: true }), 180);
+    };
+    return {
+      shown: this.state.shown !== false,
+      pop,
+      accountUrl: this.props.accountUrl ?? 'https://www.roblox.com/home',
+      reload,
+      rewards,
+      progress: count + '/3',
+      allClaimed: count === 3,
+      notAll: count < 3
+    };
+  }
+}
+</script>
+</body>
+</html>
